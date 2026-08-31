@@ -1,0 +1,23 @@
+services:
+  docker-socket-proxy:
+    image: docker-socket-proxy:local
+    ports:
+      - "127.0.0.1:2375:2375"
+    environment:
+      - IMAGES=1
+      # - CONFIGS=1
+      - CONTAINERS=1
+      - CONTAINERS_POST=1
+      # - DISTRIBUTION=1
+      # - EXEC=1
+      # - GRPC=1
+      # - INFO=1
+      - NETWORKS=1
+      - NETWORKS_POST=1
+      # - NODES=1
+      # - SESSION=1
+      # - SYSTEM=1
+      # - TASKS=1
+      # - VOLUMES=1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
